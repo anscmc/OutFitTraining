@@ -19,13 +19,30 @@ $("#showingWhat").toggleClass("showdrop");
 -->
 <script type="text/javascript">
     function freeWork(){
-       $email = $('#email_fw1').val();
-       $phone = $('#phoneNumber_fw1').val();
-       const phone1 = {phoneNumber: $phone};
-       const phone2 = JSON.stringify(phone1);
-       window.Northbeam.fireEmailCaptureEvent($email, "Free Workout 1");
-       window.Northbeam.fireCustomGoal("sms_app_download_link_send", phone2)
-       return true;
+      $firstName = $('#firstName_fw1').val();
+      $lastName = $('#lastName_fw1').val();
+      $email = $('#email_fw1').val();
+      $phone = $('#phoneNumber_fw1').val();
+      $postalCode = $('#postal_code_fw1').val();
+      $consent = $('#consent').val();
+      const phone1 = {phoneNumber: $phone};
+      const phone2 = JSON.stringify(phone1);
+      const payload = {
+        firstName: $firstName,
+        lastName: $lastName,
+        email: $email,
+        phone: $phone,
+        postalCode: $postalCode,
+        consent: $consent
+      };
+      console.log('Posting data', payload);
+      $.post(
+        'https://develop.outfittraining.com:4000/rest/hubspot/form/f2e5423a-305a-4b14-be48-4378c382ef2c', 
+        payload
+      );
+      //  window.Northbeam.fireEmailCaptureEvent($email, "Free Workout 1");
+      //  window.Northbeam.fireCustomGoal("sms_app_download_link_send", phone2)
+       return false;
     }
 </script>
 <iframe name="learnframe" style="display:none;"></iframe>

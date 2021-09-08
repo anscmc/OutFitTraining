@@ -1,0 +1,164 @@
+
+<script type="text/javascript">
+ $(document).ready(function(){
+
+                $('#trigger').waypoint(function() {
+                  $("#mainMenu").toggleClass("darkMenu");
+                }, { offset: '10px' });  
+            
+            });
+$("#showWhat").hover(function(){
+    $("#showingWhat").removeClass("showdrop2"); $("#showingWhat").toggleClass("showdrop");                         
+});
+$("#showingWhat").hover(function(){
+//                            $.fn.myFunction1();
+$("#showingWhat").toggleClass("showdrop");
+                              
+});
+    function freeWork(){
+       $email = $('#email_fw2').val();
+       $phone = $('#phoneNumber_fw2').val();
+       const phone1 = {phoneNumber: $phone};
+       const phone2 = JSON.stringify(phone1);
+       window.Northbeam.fireEmailCaptureEvent($email, "Free Workout 2");
+       window.Northbeam.fireCustomGoal("sms_app_download_link_send", phone2)
+       return true;
+    }
+</script>  
+
+<iframe name="learnframe" style="display:none;"></iframe>
+      <div class="popOutter">
+          
+              <div class="learnFormWrap">
+                  <a onclick="toggleMain()" class="closeForm"><div class="mdiv"><div class="md"></div></div></a>
+                  <span>Get Started</span>
+                  <p>Fill this form and we'll send you a special link to download the app and start your free trial.</p>
+                  <form onsubmit="return freeWork()" class="popForms" id="freeWorkout2" action="sendmsg2.php" method="get" style="text-align: center;">
+                      <div class="smallInput" >
+                        <input placeholder="First Name" id="firstName_fw2" style="width:90%!important;margin-left: 5%;" class="popInput" type="text" required>
+                      </div>
+                      <div class="smallInput">
+                         <input placeholder="Last Name"  id="lastName_fw2" style="width:90%!important;margin-left: 5%;" class="popInput" type="text" required>
+                      </div>
+                      
+                      <div class="smallInput">
+                        <input placeholder="Email" id="email_fw2" class="popInput" type="email" style="width:90%!important;margin-left: 5%;" required>
+                      </div>
+<!--                      (?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4}) (\d{3})-?\s?(\d{3})-?\s?(\d{4}) -->
+                      <script type="text/javascript">
+                        const input = document.querySelector('input[name="phone"]');
+
+                        input.addEventListener('invalid', function (event) {
+                          if (event.target.validity.patternMismatch) {
+                            event.target.setCustomValidity('Please enter a valid phone number.');
+                          }
+                        })
+
+                        input.addEventListener('change', function (event) {
+                          event.target.setCustomValidity('');
+                        })
+                      </script>
+                      <div class="smallInput">
+                         <input placeholder="Phone"  id="phoneNumber_fw2" pattern="(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})" class="popInput" type="tel" name="phone" style="width:90%!important;margin-left: 5%;" required>
+                      </div>
+                      <div class="smallInput" style="width:100%!important;margin-left: 0;margin-right: 0;text-align: center;">
+                         <input placeholder="Postal Code"  id="postal_code_fw1" min="1000"  max="99999" class="popInput" type="number" name="postal_code" style="width:40%!important;margin-left: 30%;" required>
+                      </div>
+                      <div>
+                          <style type="text/css">
+                              @media(max-width:767px){
+                                  .consentLabel{
+                                          font-size: 2.75vw!important;
+                                          margin-top: 13.5px!important;
+                                  }
+                              }
+                              
+                          </style>
+                        <input type="checkbox" name="consent" id="consent" required>
+                        <label class="consentLabel" style="vertical-align: top;margin-top: 12.5px;font-size: 11px;font-weight: 400;" for="consent">I consent to receive SMS messages from OutFit Training</label>
+                      </div>
+                      <input class="yellowBTN" type="submit" value="Send Me The Link" style="margin-top: 50px;">
+
+                  </form>
+              </div>
+      </div>
+      <div class="popQ">
+              <div class="learnFormWrap">
+                  <a onclick="toggleQ()" class="closeForm"><div class="mdiv"><div class="md"></div></div></a>
+                  <span>Questions?</span>
+                  <p>Fill out the form below and an OutFit team member will get back to you shortly.</p>
+                  <form class="popForms" id="footerFormDesk" target="learnframe" method="post" onsubmit="return questionsForm();" style="text-align: center;">
+                      <div class="smallInput" >
+                        <input placeholder="First Name" id="firstName_q" style="width:90%!important;margin-left: 5%;" class="popInput" type="text" required>
+                      </div>
+                      <div class="smallInput">
+                         <input placeholder="Last Name"  id="lastName_q" style="width:90%!important;margin-left: 5%;" class="popInput" type="text" required>
+                      </div>
+                      
+                      <div class="smallInput">
+                        <input placeholder="Email" id="email_q" class="popInput" type="email" style="width:90%!important;margin-left: 5%;" required>
+                      </div>
+                      <div class="smallInput">
+                         <input placeholder="Phone"  id="phoneNumber_q" class="popInput" type="number" style="width:90%!important;margin-left: 5%;" required>
+                      </div>
+                      <textarea name="questions" id="questions" rows="4" placeholder="Question(s)"></textarea>
+                      <input class="yellowBTN" type="submit" value="Submit" style="margin-top: 50px;">
+
+                  </form>
+              </div>
+      </div>
+ <div class="popApple popsQR">
+          <div class="aQR popsInner">
+              <a onclick="appleQR()" class="closeForm3"><div class="mdiv"><div class="md"></div></div></a>
+              <span>Pull out your phone</span>
+              <img src="../resources/css/img/qr/apple.png">
+              <span>scan with your camera!</span>
+              <p>To open our app in the Apple App Store</p>
+          </div>
+      </div>
+      <div class="popGoogle popsQR">
+          <div class="gQR popsInner">
+              <a onclick="googleQR()" class="closeForm3"><div class="mdiv"><div class="md"></div></div></a>
+              <span>Pull out your phone</span>
+              <img src="../resources/css/img/qr/google.png">
+              <span>scan with your camera!</span>
+              <p>To open our app in the Google Play Store</p>
+          </div>
+      </div>
+<div id="mainMenu" class="mainMenu animate__animated animate__fadeIn darkMenu">
+        <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12" style="position: relative;">
+                     <a href="../index.html"><img id="logo" src="../resources/css/img/logo-new.svg"></a>
+                     <div class="linkWrap">
+                         <a id="showWhat" class="menuLink">We Are OutFit <i class="fas fa-chevron-down"></i></a>
+                         <a href="../index.html#experiences" class="menuLink">Workout Options</a>
+                         <a href="../index.html#find" class="menuLink">Find Your OutFit</a>
+                         <a onclick="toggleMain()" class="menuBTN">Get Started</a>
+                     </div>
+                  </div>
+                  <i onclick="toggleMobMenu()" class="fas fa-bars burger"></i>
+              </div>
+          </div>
+      </div>
+      <div id="showingWhat" class="dropDowns" style="z-index: 4999">
+          <a href="../memberships.html">Memberships</a>
+          <a href="../history.html">History</a>
+          <a href="../mission.html">Mission</a>
+          <a href="../first-responders.html">First Responders</a>
+          <a href="../ownership.html">Ownership</a>
+          <a href="../careers.html">Careers</a>
+      </div>
+      <div class="mobmenu animate__animated animate__fadeIn">
+          <a onclick="toggleMobMenu()" class="closeMobMenu"><div class="mdiv2"><div class="md2"></div></div></a>
+          <a href="../index.html#experiences" class="mobileLinks" onclick="toggleMobMenu()">Workout Options</a>
+          <a href="../index.html#find2" class="mobileLinks"  onclick="toggleMobMenu()">Find Your OutFit</a>
+          <a class="mobileLinks" href="../memberships.html">Memberships</a>
+          <a class="mobileLinks" href="../history.html">History</a>
+          <a class="mobileLinks" href="../mission.html">Mission</a>
+          <a class="mobileLinks" href="../first-responders.html">First Responders</a>
+          <a class="mobileLinks" href="../ownership.html">Ownership</a>
+          <a class="mobileLinks" href="../careers.html">Careers</a>
+          <hr style="border-color:#494949;opacity: .75;margin:7vw;margin-left: 0;border-width:.5vw;">
+          <a onclick="toggleMain()" class="yellowBTN2">Get Started</a>
+      </div>  

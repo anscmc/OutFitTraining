@@ -1,0 +1,147 @@
+/*initial styling*/
+         .popForms input {
+              display: block;
+              width:100%;
+              line-height: 36px;
+              font-size: 30px;
+              margin-bottom: 15px;
+              border-radius: 20px;
+              padding-left: 10px;padding-right: 10px;
+              border:none;
+              
+          }
+
+          .popForms .smallInput{
+              float: left;
+              width: calc(50% - 5px);
+              display: inline-block;
+          }
+          .popSubmit{
+              width:40%!important;display: block;margin:0 auto;
+              background-color:#FFE500;
+              font-size: 20px!important;
+              line-height: 36px!important;
+              height: 40px;
+              margin-top: 10px;
+          }
+          #learnMessage{
+              display: none;
+          }
+          #outfitterMessage{
+              display: none;
+          }
+#locMessage{
+              display: none;
+          }
+#frMessage{
+              display: none;
+          }
+#locMessage2{
+              display: none;
+          }
+          .hideForm{
+              overflow: hidden;
+              height: 0!important;
+          }
+/*fort lauderdale schedule form*/
+.infoWrap{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.infoWrap h4{
+    font-size: 2vw;
+    letter-spacing: .1vw;
+}
+.infoWrap p{
+    font-size: .9vw;
+    letter-spacing: .05vw;
+}
+.schedCol{
+    width:49%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.classDay{
+    display: block;
+    width:100%;
+    color:white;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.schedCol label{
+    font-size: 14px;
+}
+#scheduleMSG{
+    display: none;
+}
+#scheduleMessage{
+    display: block;
+}
+.classDay2{
+    display: none!important;
+}
+.staticform{
+    width:100%;
+    max-width:500px;
+}
+.staticform input[type=text],.staticform input[type=number],.staticform input[type=email]{
+    border:1px solid #cbd6e2;
+    line-height: 150%;
+    height: 40px;
+    background-color: #f5f8fa;
+    
+}
+.staticform select{
+    border:1px solid #cbd6e2;
+    line-height: 150%;
+    height: 40px;
+    background-color: #f5f8fa;
+    display: block;
+              width:100%;
+              line-height: 36px;
+              font-size: 30px;
+              margin-bottom: 15px;
+    margin-left: 5px;
+              border-radius: 20px;
+              padding-left: 10px;padding-right: 10px;
+}
+.staticform label{
+    color: black!important;
+    margin-bottom: 5px;
+}
+
+.footFormP{
+    font-size: 1.25vw!important;
+    color: white!important;
+    margin-bottom: 1vw;
+}
+.footerForm label{
+    color: white!important;
+}
+.footerForm .popInput{
+    color: black!important;
+}
+@media(min-width:768px){
+    #homeVidWrap{
+        margin-top: -8vw;
+    }
+}
+@media(max-width:800px){
+    .mobfooterspace{
+        margin-bottom: 110vw!important;
+    }
+    .schedCol{
+        width:100%;
+    }
+    .infoWrap h4{
+        font-size: 6vw;
+        letter-spacing: .5vw;
+    }
+    .infoWrap p{
+        font-size: 3.5vw;
+        letter-spacing: .3vw;
+    }
+}

@@ -18,7 +18,8 @@ $("#showingWhat").toggleClass("showdrop");
 </script>  
 -->
 <script type="text/javascript">
-    function freeWork(){
+    function freeWork(event){
+      event.preventDefault();
       $firstName = $('#firstName_fw1').val();
       $lastName = $('#lastName_fw1').val();
       $email = $('#email_fw1').val();
@@ -35,20 +36,17 @@ $("#showingWhat").toggleClass("showdrop");
         postalCode: $postalCode,
         consent: $consent
       };
-      // $.post(
-      //   'https://develop.outfittraining.com:4000/rest/hubspot/form/f2e5423a-305a-4b14-be48-4378c382ef2c', 
-      //   payload
-      // );
       $.ajax({
             url: 'https://develop.outfittraining.com/rest/hubspot/form/f2e5423a-305a-4b14-be48-4378c382ef2c',
             type: 'post',
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-              console.log('Success response', data);
+              console.log('Success', data);
+              $('freeWorkout1').unbind('submit').submit();
             },
             error: function(error) {
-              console.log('error processing POST', error)
+              console.log('error in POST', error)
             },  
             data: JSON.stringify(payload)
         });
@@ -64,7 +62,7 @@ $("#showingWhat").toggleClass("showdrop");
                   <a onclick="toggleMain()" class="closeForm"><div class="mdiv"><div class="md"></div></div></a>
                   <span>Get Started</span>
                   <p style="width:80%">Receive your link for 1 week of unlimited free workouts.</p>
-                  <form onsubmit="return freeWork()" class="popForms" id="freeWorkout1" action="sendmsg.php" method="get" style="text-align: center;">
+                  <form onsubmit="return freeWork(event)" class="popForms" id="freeWorkout1" action="sendmsg.php" method="get" style="text-align: center;">
                       <div class="smallInput" >
                         <input placeholder="First Name" id="firstName_fw1" style="width:90%!important;margin-left: 5%;" class="popInput" type="text" required>
                       </div>

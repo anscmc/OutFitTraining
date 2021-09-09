@@ -19,6 +19,7 @@ $("#showingWhat").toggleClass("showdrop");
 -->
 <script type="text/javascript">
     function freeWork(event){
+      console.log('Will prevent default', event);
       event.preventDefault();
       $firstName = $('#firstName_fw1').val();
       $lastName = $('#lastName_fw1').val();

@@ -41,13 +41,16 @@ $("#showingWhat").toggleClass("showdrop");
       //   payload
       // );
       $.ajax({
-            url: 'https://develop.outfittraining.com:4000/rest/hubspot/form/f2e5423a-305a-4b14-be48-4378c382ef2c',
+            url: 'https://develop.outfittraining.com/rest/hubspot/form/f2e5423a-305a-4b14-be48-4378c382ef2c',
             type: 'post',
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-                console.log('Success response', data);
+              console.log('Success response', data);
             },
+            error: function(error) {
+              console.log('error processing POST', error)
+            },  
             data: JSON.stringify(payload)
         });
       //  window.Northbeam.fireEmailCaptureEvent($email, "Free Workout 1");

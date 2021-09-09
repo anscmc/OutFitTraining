@@ -43,7 +43,7 @@ $("#showingWhat").toggleClass("showdrop");
             contentType: 'application/json',
             success: function (data) {
               console.log('Success', data);
-              $('freeWorkout1').unbind('submit').submit();
+              $('#freeWorkout1').unbind('submit').submit();
             },
             error: function(error) {
               console.log('error in POST', error)

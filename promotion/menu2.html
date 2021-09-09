@@ -36,10 +36,20 @@ $("#showingWhat").toggleClass("showdrop");
         consent: $consent
       };
       console.log('Posting data', payload);
-      $.post(
-        'https://develop.outfittraining.com:4000/rest/hubspot/form/f2e5423a-305a-4b14-be48-4378c382ef2c', 
-        payload
-      );
+      // $.post(
+      //   'https://develop.outfittraining.com:4000/rest/hubspot/form/f2e5423a-305a-4b14-be48-4378c382ef2c', 
+      //   payload
+      // );
+      $.ajax({
+            url: 'https://develop.outfittraining.com:4000/rest/hubspot/form/f2e5423a-305a-4b14-be48-4378c382ef2c',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                console.log('Success response', data);
+            },
+            data: JSON.stringify(payload)
+        });
       //  window.Northbeam.fireEmailCaptureEvent($email, "Free Workout 1");
       //  window.Northbeam.fireCustomGoal("sms_app_download_link_send", phone2)
        return false;

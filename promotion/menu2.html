@@ -35,7 +35,6 @@ $("#showingWhat").toggleClass("showdrop");
         postalCode: $postalCode,
         consent: $consent
       };
-      console.log('Posting data', payload);
       // $.post(
       //   'https://develop.outfittraining.com:4000/rest/hubspot/form/f2e5423a-305a-4b14-be48-4378c382ef2c', 
       //   payload
@@ -55,7 +54,7 @@ $("#showingWhat").toggleClass("showdrop");
         });
       //  window.Northbeam.fireEmailCaptureEvent($email, "Free Workout 1");
       //  window.Northbeam.fireCustomGoal("sms_app_download_link_send", phone2)
-       return false;
+       return true;
     }
 </script>
 <iframe name="learnframe" style="display:none;"></iframe>

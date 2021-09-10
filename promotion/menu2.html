@@ -44,7 +44,6 @@ $("#showingWhat").toggleClass("showdrop");
             contentType: 'application/json',
             success: function (data) {
               console.log('Success', data);
-              // $('#freeWorkout1').unbind('submit').submit();
               const formEl = $('#freeWorkout1');
               formEl.removeAttr('onsubmit')
               formEl.submit();
@@ -54,8 +53,8 @@ $("#showingWhat").toggleClass("showdrop");
             },  
             data: JSON.stringify(payload)
         });
-      //  window.Northbeam.fireEmailCaptureEvent($email, "Free Workout 1");
-      //  window.Northbeam.fireCustomGoal("sms_app_download_link_send", phone2)
+      window.Northbeam.fireEmailCaptureEvent($email, "Free Workout 1");
+      window.Northbeam.fireCustomGoal("sms_app_download_link_send", phone2)
       // return true;
     }
 </script>

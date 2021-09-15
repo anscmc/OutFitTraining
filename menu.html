@@ -17,15 +17,43 @@ $("#showingWhat").toggleClass("showdrop");
 });
 </script> 
 <script type="text/javascript">
-    function freeWork(){
-       $email = $('#email_f').val();
-       $phone = $('#phoneNumber_f').val();
-       const phone1 = {phoneNumber: $phone};
-       const phone2 = JSON.stringify(phone1);
-       window.Northbeam.fireEmailCaptureEvent($email, "Get Started Popup");
-       window.Northbeam.fireCustomGoal("sms_app_download_link_send", phone2)
-       return true;
-    }
+  function freeWork(event){
+    event.preventDefault();
+    $firstName = $('#firstName_f').val();
+    $lastName = $('#lastName_f').val();
+    $email = $('#email_f').val();
+    $phone = $('#phoneNumber_f').val();
+    $postalCode = $('#postal_code_f').val();
+    $consent = $('#consent').val();
+    const phone1 = {phoneNumber: $phone};
+    const phone2 = JSON.stringify(phone1);
+    const payload = {
+      firstName: $firstName,
+      lastName: $lastName,
+      email: $email,
+      phone: $phone,
+      postalCode: $postalCode,
+      consent: $consent
+    };
+    $.ajax({
+          url: 'https://develop.outfittraining.com/rest/hubspot/form/79fd0e46-faf8-4927-87f8-4c0fd16848cc',
+          type: 'post',
+          dataType: 'json',
+          contentType: 'application/json',
+          success: function (data) {
+            console.log('Success in menu', data, payload);
+            const formEl = $('#getStarted');
+            formEl.removeAttr('onsubmit')
+            formEl.submit();
+          },
+          error: function(error) {
+            console.log('error in POST menu', error)
+          },  
+          data: JSON.stringify(payload)
+      });
+    window.Northbeam.fireEmailCaptureEvent($email, "Get Started Popup");
+    window.Northbeam.fireCustomGoal("sms_app_download_link_send", phone2)
+  }
 </script>
 <iframe name="learnframe" style="display:none;"></iframe>
       <div class="popOutter">
@@ -34,7 +62,7 @@ $("#showingWhat").toggleClass("showdrop");
                   <a onclick="toggleMain()" class="closeForm"><div class="mdiv"><div class="md"></div></div></a>
                   <span>Get Started</span>
                   <p style="padding-left: 10px;padding-right: 10px;">Fill this form and we'll send you a special link to download the app and start your free trial.</p>
-                  <form onsubmit="return freeWork()" class="popForms" id="getStarted" action="sendmsg.php" method="get" style="text-align: center;">
+                  <form onsubmit="return freeWork(event)" class="popForms" id="getStarted" action="sendmsg.php" method="get" style="text-align: center;">
                       <div class="smallInput" >
                         <input placeholder="First Name" id="firstName_f" style="width:90%!important;margin-left: 5%;" class="popInput" type="text" required>
                       </div>

@@ -42,7 +42,6 @@ $("#showingWhat").toggleClass("showdrop");
           dataType: 'json',
           contentType: 'application/json',
           success: function (data) {
-            console.log('Success in promotion/menu2', data, payload);
             const formEl = $('#freeWorkout1');
             formEl.removeAttr('onsubmit')
             formEl.submit();

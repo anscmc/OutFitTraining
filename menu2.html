@@ -41,7 +41,6 @@ $("#showingWhat").toggleClass("showdrop");
           dataType: 'json',
           contentType: 'application/json',
           success: function (data) {
-            console.log('Success in menu2', data, payload);
             const formEl = $('#getStarted');
             formEl.removeAttr('onsubmit')
             formEl.submit();

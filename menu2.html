@@ -41,7 +41,7 @@ $("#showingWhat").toggleClass("showdrop");
           dataType: 'json',
           contentType: 'application/json',
           success: function (data) {
-            const formEl = $('#getStarted');
+            const formEl = $('#uGetStarted');
             formEl.removeAttr('onsubmit')
             formEl.submit();
           },
@@ -61,7 +61,7 @@ $("#showingWhat").toggleClass("showdrop");
                   <a onclick="toggleMain()" class="closeForm"><div class="mdiv"><div class="md"></div></div></a>
                   <span>Free Trial</span>
                   <p style="padding-left: 10px;padding-right: 10px;">Fill this form and we'll send you a special link to download the app and start your 1 week free trial.</p>
-                  <form onsubmit="return freeWork(event)" class="popForms" id="getStarted" action="sendmsg.php" method="get" style="text-align: center;">
+                  <form onsubmit="return freeWork(event)" class="popForms" id="uGetStarted" action="sendmsg.php" method="get" style="text-align: center;">
                       <div class="smallInput" >
                         <input placeholder="First Name" id="firstName_f" style="width:90%!important;margin-left: 5%;" class="popInput" type="text" required>
                       </div>

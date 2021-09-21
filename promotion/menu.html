@@ -39,7 +39,7 @@ $("#showingWhat").toggleClass("showdrop");
           dataType: 'json',
           contentType: 'application/json',
           success: function (data) {
-            const formEl = $('#freeWorkout2');
+            const formEl = $('#uFreeWorkout2');
             formEl.removeAttr('onsubmit')
             formEl.submit();
           },
@@ -60,7 +60,7 @@ $("#showingWhat").toggleClass("showdrop");
                   <a onclick="toggleMain()" class="closeForm"><div class="mdiv"><div class="md"></div></div></a>
                   <span>Get Started</span>
                   <p>Fill this form and we'll send you a special link to download the app and start your free trial.</p>
-                  <form onsubmit="return freeWork(event)" class="popForms" id="freeWorkout2" action="sendmsg2.php" method="get" style="text-align: center;">
+                  <form onsubmit="return freeWork(event)" class="popForms" id="uFreeWorkout2" action="sendmsg2.php" method="get" style="text-align: center;">
                       <div class="smallInput" >
                         <input placeholder="First Name" id="firstName_fw2" style="width:90%!important;margin-left: 5%;" class="popInput" type="text" required>
                       </div>

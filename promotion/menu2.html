@@ -42,7 +42,7 @@ $("#showingWhat").toggleClass("showdrop");
           dataType: 'json',
           contentType: 'application/json',
           success: function (data) {
-            const formEl = $('#freeWorkout1');
+            const formEl = $('#uFreeWorkout1');
             formEl.removeAttr('onsubmit')
             formEl.submit();
           },
@@ -62,7 +62,7 @@ $("#showingWhat").toggleClass("showdrop");
                   <a onclick="toggleMain()" class="closeForm"><div class="mdiv"><div class="md"></div></div></a>
                   <span>Get Started</span>
                   <p style="width:80%">Receive your link for 1 week of unlimited free workouts.</p>
-                  <form onsubmit="return freeWork(event)" class="popForms" id="freeWorkout1" action="sendmsg.php" method="get" style="text-align: center;">
+                  <form onsubmit="return freeWork(event)" class="popForms" id="uFreeWorkout1" action="sendmsg.php" method="get" style="text-align: center;">
                       <div class="smallInput" >
                         <input placeholder="First Name" id="firstName_fw1" style="width:90%!important;margin-left: 5%;" class="popInput" type="text" required>
                       </div>
